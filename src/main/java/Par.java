@@ -434,7 +434,7 @@ public class Par{
 //        });
     }
     public static void main(String[] args){
-        Other.WebLFActiv();
+       // Other.WebLFActiv();
         new Par();
     }
 }

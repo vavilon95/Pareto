@@ -21,7 +21,7 @@ public class Par{
     private JButton методУверенныхСужденийButton;
     public static JTable Table2 = new JTable();
     public static JTable Table = new JTable();
-    public  static JTable Table22 =null;
+    public  static JTable Table22 = null;
     public Par(){
 
         JFrame Par = new JFrame();
@@ -345,93 +345,93 @@ public class Par{
                 r.Rang(Integer.parseInt(textField2.getText()),Pan3,Par);
             }
         });
-        методУверенныхСужденийButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                boolean[] MaxMin = new boolean[Integer.parseInt(textField2.getText())];
-                double[][] Data = new double[Integer.parseInt(textField1.getText())][Integer.parseInt(textField2.getText())+1];
-                for(int i=1;i<Integer.parseInt(textField2.getText())+1;i++){
-                    MaxMin[i-1] = (boolean)Table2.getValueAt(0,i);
-                }
-                for(int i=0;i<Integer.parseInt(textField1.getText());i++){
-                    for(int j=0;j<Integer.parseInt(textField2.getText())+1;j++){
-                        Data[i][j] = Double.parseDouble(String.valueOf(Table.getValueAt(i,j)));
-                    }
-                }
-                /*double[][] Data = new double[][]{
-                        {0,30,70},
-                        {1,40,80},
-                        {2,20,60},
-                        {3,34,80}
-                };*/
-//                double[][] Data = new double[][]{
-//                        {0,4,4},
-//                        {1,7,20},
-//                        {2,3,8},
-//                        {3,5,15}
-//                };
-//                double[][] Data = new double[][]{
-//                        {0,30,75},
-//                        {1,40,100},
+//        методУверенныхСужденийButton.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                boolean[] MaxMin = new boolean[Integer.parseInt(textField2.getText())];
+//                double[][] Data = new double[Integer.parseInt(textField1.getText())][Integer.parseInt(textField2.getText())+1];
+//                for(int i=1;i<Integer.parseInt(textField2.getText())+1;i++){
+//                    MaxMin[i-1] = (boolean)Table2.getValueAt(0,i);
+//                }
+//                for(int i=0;i<Integer.parseInt(textField1.getText());i++){
+//                    for(int j=0;j<Integer.parseInt(textField2.getText())+1;j++){
+//                        Data[i][j] = Double.parseDouble(String.valueOf(Table.getValueAt(i,j)));
+//                    }
+//                }
+//                /*double[][] Data = new double[][]{
+//                        {0,30,70},
+//                        {1,40,80},
 //                        {2,20,60},
-//                        {3,35,80}
-//                };
-                //boolean[] MaxMin = new boolean[]{false,true};//true если минимизируем
-                double[][] MatrRez = YvSy.YV(Data,MaxMin);
-                double[] Nomera = YvSy.GetNom();
-                JFrame Rezult3 = new JFrame();
-                JPanel Pan3 = new JPanel();
-                Rezult3.setTitle("Матрица на основе уверенных суждений");
-                Other.frameDisplayCenter(500,500,Rezult3);
-                Object[] columnsHeader3 = new Object[4];//{"Имя файла","Путь к файлу"}
-                columnsHeader3[0]="ID";
-                columnsHeader3[1]="Результаты";
-                columnsHeader3[2]="Важен первый";
-                columnsHeader3[3]="Важен второй";
-                DefaultTableModel model2= new DefaultTableModel();
-                // Определение стоблцов
-                model2.setColumnIdentifiers(columnsHeader3);
-                // Наполнение модели данными
-                while (model2.getRowCount()>0) {
-                    model2.removeRow(0);
-                }
-                //Вывод в таблицу
-                for(int i=0;i<Data.length;i++){
-                    Object[] O = new Object[4];
-                    O[0]=Nomera[i];
-                    if(MatrRez[i][0]!=0){
-                        O[1]=MatrRez[i][0]*100/2;
-                    }else if(MatrRez[i][1]!=0){
-                        O[1]=MatrRez[i][1]*100/2;
-                    }else{
-                        O[1]="";
-                    }
-
-                    if(MatrRez[i][0]!=0){
-                        O[2]=MatrRez[i][0]*100;
-                    }else{
-                        O[2]="";
-                    }
-                    if(MatrRez[i][1]!=0){
-                        O[3]=MatrRez[i][1]*100;
-                    }else{
-                        O[3]="";
-                    }
-                    model2.addRow(O);
-                }
-                JTable Tab3 = new JTable(model2);
-
-                JScrollPane SPOne3 = new JScrollPane(Tab3);
-                SPOne3.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
-                SPOne3.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-                GridConstraints c2 = new GridConstraints();
-                c2.setFill(3);
-                Pan3.add(SPOne3, c2);
-                Rezult3.setContentPane(Pan3);
-                Rezult3.setVisible(true);
-
-            }
-        });
+//                        {3,34,80}
+//                };*/
+////                double[][] Data = new double[][]{
+////                        {0,4,4},
+////                        {1,7,20},
+////                        {2,3,8},
+////                        {3,5,15}
+////                };
+////                double[][] Data = new double[][]{
+////                        {0,30,75},
+////                        {1,40,100},
+////                        {2,20,60},
+////                        {3,35,80}
+////                };
+//                //boolean[] MaxMin = new boolean[]{false,true};//true если минимизируем
+//                double[][] MatrRez = YvSy.YV(Data,MaxMin);
+//                double[] Nomera = YvSy.GetNom();
+//                JFrame Rezult3 = new JFrame();
+//                JPanel Pan3 = new JPanel();
+//                Rezult3.setTitle("Матрица на основе уверенных суждений");
+//                Other.frameDisplayCenter(500,500,Rezult3);
+//                Object[] columnsHeader3 = new Object[4];//{"Имя файла","Путь к файлу"}
+//                columnsHeader3[0]="ID";
+//                columnsHeader3[1]="Результаты";
+//                columnsHeader3[2]="Важен первый";
+//                columnsHeader3[3]="Важен второй";
+//                DefaultTableModel model2= new DefaultTableModel();
+//                // Определение стоблцов
+//                model2.setColumnIdentifiers(columnsHeader3);
+//                // Наполнение модели данными
+//                while (model2.getRowCount()>0) {
+//                    model2.removeRow(0);
+//                }
+//                //Вывод в таблицу
+//                for(int i=0;i<Data.length;i++){
+//                    Object[] O = new Object[4];
+//                    O[0]=Nomera[i];
+//                    if(MatrRez[i][0]!=0){
+//                        O[1]=MatrRez[i][0]*100/2;
+//                    }else if(MatrRez[i][1]!=0){
+//                        O[1]=MatrRez[i][1]*100/2;
+//                    }else{
+//                        O[1]="";
+//                    }
+//
+//                    if(MatrRez[i][0]!=0){
+//                        O[2]=MatrRez[i][0]*100;
+//                    }else{
+//                        O[2]="";
+//                    }
+//                    if(MatrRez[i][1]!=0){
+//                        O[3]=MatrRez[i][1]*100;
+//                    }else{
+//                        O[3]="";
+//                    }
+//                    model2.addRow(O);
+//                }
+//                JTable Tab3 = new JTable(model2);
+//
+//                JScrollPane SPOne3 = new JScrollPane(Tab3);
+//                SPOne3.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
+//                SPOne3.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+//                GridConstraints c2 = new GridConstraints();
+//                c2.setFill(3);
+//                Pan3.add(SPOne3, c2);
+//                Rezult3.setContentPane(Pan3);
+//                Rezult3.setVisible(true);
+//
+//            }
+//        });
     }
     public static void main(String[] args){
         Other.WebLFActiv();
